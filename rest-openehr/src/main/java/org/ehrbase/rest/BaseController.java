@@ -115,7 +115,10 @@ public abstract class BaseController {
 
   protected String getBaseEnvLinkURL() {
 
-    return ServletUriComponentsBuilder.fromCurrentRequest().build().toUriString();
+    return ServletUriComponentsBuilder
+            .fromCurrentContextPath()
+            .build()
+            .toUriString();
   }
 
   /**
